@@ -1,1 +1,10 @@
-first commit
+README - this file
+config.tf - TF version, provider, & region
+index.html - stub file for initial deploy
+lambda/webdate.py - script to write timestamp to s3 bucket taking bucket & timezone as environment variables
+lambda.tf - TF to deploy lambda
+outputs.tf - output S3 website URL
+s3.tf - TF to generate bucket with encryption, IAM policies, static website config, initial object
+schedule.tf - Eventbridge schedule to execute lambda on schedule (every 10 minutes)
+variables.tf - Set bucket name and timezone
+
