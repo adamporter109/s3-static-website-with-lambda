@@ -2,25 +2,14 @@ resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
 }
 
-#resource "aws_kms_key" "s3key" {
-#  description             = "This key is used to encrypt bucket objects"
-#  deletion_window_in_days = 10
-#}
-
 resource "aws_s3_bucket_server_side_encryption_configuration" "encrypt-bucket" {
   bucket = aws_s3_bucket.bucket.id
 
   rule {
     apply_server_side_encryption_by_default {
-#      sse_algorithm     = "aws:kms"
       sse_algorithm     = "AES256"
     }
   }
-}
-
-import {
-  to = aws_s3_bucket_server_side_encryption_configuration.encrypt-bucket
-  id = var.bucket_name
 }
 
 resource "aws_s3_bucket_policy" "bucket_policy" {
