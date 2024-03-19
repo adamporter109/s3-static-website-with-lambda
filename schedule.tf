@@ -1,7 +1,7 @@
 resource "aws_cloudwatch_event_rule" "lambda_every_10_minutes" {
   name                = "lambda-every-10-minutes"
   description         = "Runs every 10 minutes"
-  schedule_expression = "rate(1 minute)"
+  schedule_expression = "rate(10 minutes)"
 }
 
 resource "aws_cloudwatch_event_target" "trigger_lambda_on_schedule" {
