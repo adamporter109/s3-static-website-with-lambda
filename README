@@ -12,3 +12,17 @@ index.html - stub file for initial deploy
 
 outputs.tf - output S3 website URL
 
+
+Requirements:
+For AWS, some permissions required:
+to create lambda & s3 buckets, to allow lambda to write to s3 bucket, remove public s3 block, to allow logging to cloudwatch
+
+To deploy:
+Set provder & region in config.tf.
+Set bucket name (must be unique) and timezone in variables.tf.
+terraform init
+terraform plan (if desired)
+terraform apply
+
+To tear down and remove everything:
+terraform destroy
