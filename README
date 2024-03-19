@@ -26,3 +26,4 @@ terraform apply
 
 To tear down and remove everything:
 terraform destroy
+
